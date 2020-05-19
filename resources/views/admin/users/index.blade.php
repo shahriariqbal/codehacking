@@ -25,7 +25,7 @@
 
            <tr>
            <td> {{$user->id }}</td>
-           <td>  <img height="50" width="70" src="{{ $user->photo ? $user->photo->file : 'no user photo'  }}" alt="">  </td>
+           <td>  <img height="50" width="50" src="{{ $user->photo ? $user->photo->file : 'http://placehold.it/50x50'}}" alt="" class="img-responsive img-rounded"> </td>
            <td> <a href="{{ route('admin.users.edit', $user->id ) }}">    {{$user->name }}</a> </td>
            <td> {{$user->email }}</td>
            <td> {{$user->role->name }}</td>
