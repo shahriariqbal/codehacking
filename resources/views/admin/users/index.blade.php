@@ -3,6 +3,35 @@
 
 @section('content')
 
+
+
+{{-- Flash message (session) --}}
+
+{{-- for deleted user --}}
+@if (Session::has('deleted_user'))
+
+  <p class="bg-danger">{{ session('deleted_user')}} </p>
+    
+@endif
+
+{{-- for updated user --}}
+@if (Session::has('updated_user'))
+
+  <p class=" bg-primary text-white">{{ session('updated_user')}} </p>
+    
+@endif
+
+{{-- for created user --}}
+@if (Session::has('created_user'))
+
+  <p class=" bg-success text-white">{{ session('created_user')}} </p>
+  
+    
+@endif
+
+
+
+
 <h1> Users </h1>
 
 
