@@ -6,7 +6,7 @@
 
 <div class="row">
 
-    {!! Form::open(['method'=>'POST', 'action'=>'AdminPostsController@store']) !!}
+    {!! Form::open(['method'=>'POST', 'action'=>'AdminPostsController@store', 'files'=> true]) !!}
 
         <div class="form-group">
             {!! Form::label('title', 'Title:') !!}
