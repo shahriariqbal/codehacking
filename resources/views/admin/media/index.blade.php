@@ -23,6 +23,13 @@
                         <td>{{$photo->file }}</td>
                         <td align="center"> <img width="60" src="{{$photo->file }}" alt="" class="img-responsive img-rounded" > </td>
                         <td>{{$photo->created_at ? $photo->created_at->diffForHumans() : 'No Date' }}</td>
+                        <td> 
+                            {!! Form::open(['method'=>'DELETE', 'action'=>[ 'AdminMediasController@destroy', $photo->id ]]) !!}
+                                <div class="form-group">
+                                    {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
+                                </div>
+                            {!! Form::close() !!}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
