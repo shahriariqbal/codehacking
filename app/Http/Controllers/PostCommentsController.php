@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class PostCommentController extends Controller
+class PostCommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class PostCommentController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.comments.index');
     }
 
     /**
