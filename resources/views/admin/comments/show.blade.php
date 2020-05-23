@@ -2,7 +2,8 @@
 
 @section('content')
 
-     @if ($comments)
+     @if ( count($comments)>0)
+     <h1>Comments </h1>
          
     <table style="text-align:center" class="table table-bordered table-hover">
         <thead >
@@ -15,6 +16,10 @@
         </thead>
 
         <tbody>
+
+            @foreach ($comments as $comment)
+                
+            
 
                 <tr>
                     <td>{{$comment->id }}</td>
@@ -53,14 +58,16 @@
 
 
                 </tr>
+            @endforeach
 
         </tbody>
     </table>
 
- @endif
+    @else
+    <h1 class="text-center"> No Comments</h1>
+    @endif
 
- @else
-        <h1 class="text-center"> No Comments</h1>
+
 
 
 @stop
