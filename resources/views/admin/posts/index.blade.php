@@ -14,6 +14,8 @@
         <th>Category</th>
         <th>Title</th>
         <th>Body</th>
+        <th>Post Link</th>
+        <th>Comments</th>
         <th>Created</th>
         <th>Updated</th>
       </tr>
