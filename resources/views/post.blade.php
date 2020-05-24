@@ -87,39 +87,41 @@
 
                     @if (count($comment->replies)> 0)
                         @foreach ($comment->replies as $reply)
-                                    
-                            <!-- Nested Comment -->
-                            <div id="nested-comment" class="media">
-                                <a class="pull-left" href="#">
-                                <img height="34" class="media-object img-rounded" src=" {{ $reply->photo }}" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"> {{$reply->author}}
-                                    <small> {{$reply->created_at->diffForHumans()}} </small>
-                                    </h4>
-                                    <p> {{$reply->body}} </p>
-                                </div>
+                            @if ($reply->is_active == 1)
+                                <!-- Nested Comment -->
+                                    <div id="nested-comment" class="media">
+                                        <a class="pull-left" href="#">
+                                        <img height="34" class="media-object img-rounded" src=" {{ $reply->photo }}" alt="">
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading"> {{$reply->author}}
+                                            <small> {{$reply->created_at->diffForHumans()}} </small>
+                                            </h4>
+                                            <p> {{$reply->body}} </p>
+                                        </div>
 
-                                <div class="comment-reply-container"> 
-                                    <button class="toggle-reply btn btn-primary pull-right">Reply</button>
+                                        <div class="comment-reply-container"> 
+                                            <button class="toggle-reply btn btn-primary pull-right">Reply</button>
 
-                                    <div class="comment-reply col-sm-6">
-                                        {!! Form::open(['method'=>'POST', 'action'=>'CommentRepliesController@createReply']) !!}
-                                            
-                                            <div class="form-group">
-                                                <input type="hidden" name="comment_id" value="{{$comment->id}}">
-                                                {!! Form::label('body', 'Body:') !!}
-                                                {!! Form::textarea('body', null, ['class'=> 'form-control ', 'rows'=>1]) !!}
+                                            <div class="comment-reply col-sm-6">
+                                                {!! Form::open(['method'=>'POST', 'action'=>'CommentRepliesController@createReply']) !!}
+                                                    
+                                                    <div class="form-group">
+                                                        <input type="hidden" name="comment_id" value="{{$comment->id}}">
+                                                        {!! Form::label('body', 'Body:') !!}
+                                                        {!! Form::textarea('body', null, ['class'=> 'form-control ', 'rows'=>1]) !!}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {!! Form::submit('submit', ['class'=> 'btn btn-primary']) !!}
+                                                    </div>
+                                                    {!! Form::close() !!}
                                             </div>
-                                            <div class="form-group">
-                                                {!! Form::submit('submit', ['class'=> 'btn btn-primary']) !!}
-                                            </div>
-                                            {!! Form::close() !!}
-                                    </div>
-                                </div>
-                               <!-- End Nested Comment -->
-                            </div> 
-
+                                        </div>
+                                    <!-- End Nested Comment -->
+                                    </div> 
+                                @else
+                                    <h1 class="text-center"> No Replies </h1>
+                            @endif
                         @endforeach
                     @endif
 
