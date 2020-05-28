@@ -62,4 +62,9 @@
         <h1 class="text-center"> No Comments</h1>
     @endif
 
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-5"></div>
+          {{$comments->render()}}
+      </div>
+
 @stop

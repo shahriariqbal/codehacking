@@ -10,7 +10,7 @@ use App\Photo;
 class AdminMediasController extends Controller
 {
     public function index(){
-        $photos = Photo::all();
+        $photos = Photo::paginate(5);
         return view('admin.media.index', compact('photos'));
     }
 

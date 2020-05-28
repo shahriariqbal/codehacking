@@ -45,4 +45,9 @@
     </tbody>
   </table>
 
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-5"></div>
+      {{$posts->render()}}
+  </div>
+
 @stop
