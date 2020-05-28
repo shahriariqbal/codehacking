@@ -75,7 +75,8 @@
         @foreach ($comments as $comment)
             <div class="media">
                 <a class="pull-left" href="#">
-                <img height="64" class="media-object img-rounded" src=" {{ $comment->photo }} " alt="">
+                {{-- <img height="64" class="media-object img-rounded" src=" {{ $comment->photo }} " alt=""> --}}
+                <img height="64" class="media-object img-rounded" src=" {{ Auth::user()->gravatar }} " alt="">
                 </a>
 
                 <div class="media-body">
