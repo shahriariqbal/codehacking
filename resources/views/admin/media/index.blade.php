@@ -8,6 +8,10 @@
 
 
     <form action="/delete/media" method="post" class="form-inline">
+
+        {{-- {{ csrf_field() }}
+        {{ method_field('delete') }} --}}
+
         <div class="form-group">
             <select name="checkBoxArray" id="" class="form-control">
                 <option value="delete">Delete</option>
@@ -15,7 +19,7 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" class="btn-primary">
+            <input type="submit" class="btn btn-primary">
         </div>
 
 
@@ -54,9 +58,32 @@
     </form>
 
     @endif
+
+
+
+
     <div class="row">
         <div class="col-sm-6 col-sm-offset-5"></div>
           {{$photos->render()}}
     </div>
 
+@stop
+
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        $('#options').click(function(){
+            if (this.checked) {
+                $('.checkBoxes').each(function(){
+                    this.checked =  true;
+                });
+            }else{
+                $('.checkBoxes').each(function(){
+                    this.checked =  false;
+                });
+            }
+        });
+    })
+
+</script>
 @stop
