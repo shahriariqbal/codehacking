@@ -7,14 +7,14 @@
     @if($photos)
 
 
-    <form action="/delete/media" method="post" class="form-inline">
+    <form action="delete/media" method="post" class="form-inline">
 
         {{-- {{ csrf_field() }}
         {{ method_field('delete') }} --}}
 
         <div class="form-group">
             <select name="checkBoxArray" id="" class="form-control">
-                <option value="delete">Delete</option>
+                <option value="">Delete</option>
             </select>
         </div>
 
@@ -45,10 +45,13 @@
                         <td align="center"> <img width="60" src="{{$photo->file }}" alt="" class="img-responsive img-rounded" > </td>
                         <td>{{$photo->created_at ? $photo->created_at->diffForHumans() : 'No Date' }}</td>
                         <td> 
+                            {{-- <input type="hidden" name="photo" value=" {{$photo->id}} "> --}}
+                        
                             {!! Form::open(['method'=>'DELETE', 'action'=>[ 'AdminMediasController@destroy', $photo->id ]]) !!}
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
-                                </div>
+                                    
+                                </div> --}}
                             {!! Form::close() !!}
                         </td>
                     </tr>
