@@ -6,15 +6,15 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.4.*",
-        "laravelcollective/html": "5.4.*",
+        "laravel/framework": "5.5.*",
+        "laravelcollective/html": "5.5.*",
         "unisharp/laravel-filemanager": "^2.1",
         "intervention/image": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7",
+        "phpunit/phpunit": "~6.0",
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*"
     },
