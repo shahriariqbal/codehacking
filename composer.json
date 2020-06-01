@@ -6,8 +6,8 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.6.*",
-        "laravelcollective/html": "5.5.*",
+        "laravel/framework": "5.7.*",
+        "laravelcollective/html": "*",
         "unisharp/laravel-filemanager": "^2.1",
         "intervention/image": "^2.5"
     },
