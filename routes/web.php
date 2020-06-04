@@ -7,6 +7,19 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 
 
+
+Route::resource('admin/posts', 'AdminPostsController', ['names' => [
+
+    'index'=> 'admin.posts.index',
+    'create'=> 'admin.posts.create',
+    'store'=> 'admin.posts.store',
+    'edit'=> 'admin.posts.edit'
+
+]]);
+
+
+
+
 Route::group(['middleware' => 'admin'], function () {
 
     Route::get('/admin', 'AdminController@index');
@@ -22,14 +35,21 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::get('/post/{id}', ['as'=>'home.post','uses'=>'AdminPostsController@post'] );
 
-    Route::resource('admin/posts', 'AdminPostsController', ['names' => [
 
-        'index'=> 'admin.posts.index',
-        'create'=> 'admin.posts.create',
-        'store'=> 'admin.posts.store',
-        'edit'=> 'admin.posts.edit'
 
-    ]]);
+
+
+    // Route::resource('admin/posts', 'AdminPostsController', ['names' => [
+
+    //     'index'=> 'admin.posts.index',
+    //     'create'=> 'admin.posts.create',
+    //     'store'=> 'admin.posts.store',
+    //     'edit'=> 'admin.posts.edit'
+
+    // ]]);
+
+
+
 
     Route::resource('admin/categories', 'AdminCategoriesController', ['names'=> [
 

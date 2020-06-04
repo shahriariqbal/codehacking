@@ -58,7 +58,9 @@ class AdminPostsController extends Controller
 
         $user->posts()->create($input);
 
-        return redirect('/admin/posts');
+        return redirect('/admin/posts/create');
+        // return redirect('/admin/posts');
+        // return redirect('/');
 
         
     }

@@ -9,7 +9,12 @@
 
 {{-- Admin Side Navigation --}}
 
-@include('includes.admin_side_nav')
+@if ( Auth::user()->isAdmin() )
 
-        <!-- /.navbar-static-side -->
-    </nav>
+    @include('includes.admin_side_nav')
+
+            <!-- /.navbar-static-side -->
+        </nav>
+
+@endif
+

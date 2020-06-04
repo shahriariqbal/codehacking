@@ -1,6 +1,11 @@
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
+
+
+
+
+
             <li class="sidebar-search">
                 <div class="input-group custom-search-form">
                     <input type="text" class="form-control" placeholder="Search...">
@@ -12,75 +17,97 @@
                 </div>
                 <!-- /input-group -->
             </li>
-            <li>
-                <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-            </li>
 
-            <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
+
+            {{-- .................................................... --}}
+
+
+            {{-- if(Auth::check()){
+
+                if (Auth::user()->isAdmin()) {
+                    return $next($request);
+                }
+    
+            }
+            return redirect('/'); --}}
+
+
+    
+
+            {{-- @if ( Auth::user()->isAdmin() ) --}}
                     <li>
-                    <a href=" {{ route('admin.users.index')}}">All Users</a>
+                        <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                            <a href=" {{ route('admin.users.index')}}">All Users</a>
+                            </li>
+
+                            <li>
+                            <a href="{{ route('admin.users.create') }}">Create User</a>
+                            </li>
+
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
+         
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href=" {{ route('admin.posts.index') }} ">All Posts</a>
+                            </li>
+
+                            <li>
+                                <a href=" {{ route('admin.posts.create') }} ">Create Post</a>
+                            </li>
+
+                            <li>
+                                <a href=" {{ route('admin.comments.index') }} ">All Comments</a>
+                            </li>
+
+                        </ul>
+                        <!-- /.nav-second-level -->
                     </li>
 
                     <li>
-                    <a href="{{ route('admin.users.create') }}">Create User</a>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Categories<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                            <a href=" {{ route('admin.categories.index') }}">All Categories</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
                     </li>
-
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-
-            <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
                     <li>
-                        <a href=" {{ route('admin.posts.index') }} ">All Posts</a>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href=" {{ route('admin.media.index') }} ">All Media</a>
+                            </li>
+
+                            <li>
+                                <a href=" {{ route('admin.media.create') }} ">Upload Media</a>
+                            </li>
+
+                        </ul>
+                        <!-- /.nav-second-level -->
                     </li>
 
-                    <li>
-                        <a href=" {{ route('admin.posts.create') }} ">Create Post</a>
-                    </li>
-
-                    <li>
-                        <a href=" {{ route('admin.comments.index') }} ">All Comments</a>
-                    </li>
-
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-
-
-            <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i>Categories<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                    <a href=" {{ route('admin.categories.index') }}">All Categories</a>
-                    </li>
-
-
-
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-
-
-            <li>
-                <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href=" {{ route('admin.media.index') }} ">All Media</a>
-                    </li>
-
-                    <li>
-                        <a href=" {{ route('admin.media.create') }} ">Upload Media</a>
-                    </li>
-
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-
-
+            {{-- @else
+                <li>
+                    <a href="#"><i class="fa fa-wrench fa-fw"></i>Create  Post<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href=" {{ route('admin.posts.create') }} ">Create Post</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li> --}}
+            {{-- @endif --}}
 
 
 

@@ -23,14 +23,25 @@
                     <a href="{{url('/register') }}"> Register </a>
                 </li>
                     
-                @else
+                @elseif ( Auth::user()->isAdmin() )
 
                 <li>
-                    <a href="/admin">Admin</a>
+                    <a href="/admin">Dashboard</a>
                 </li>
                 <li>
                     <a href="/logout">Logout</a>
                 </li>
+
+                @else
+
+                <li>
+                    <a href=" {{ route('admin.posts.create') }} ">Create Posts</a>
+                </li>
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+
+                
                     
                 @endif
 

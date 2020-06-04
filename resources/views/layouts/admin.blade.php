@@ -32,12 +32,20 @@
 
 </head>
 
+
+
+
+
 <body id="admin-page">
+
+
+
+   
 
 <div id="wrapper">
 
 
-
+   
 
 
 @include('includes.admin_nav')
@@ -49,7 +57,7 @@
 
 
 
-
+@if ( Auth::user()->isAdmin() )
 
 
     <div class="navbar-default sidebar" role="navigation">
@@ -87,6 +95,9 @@
 
     </div>
 
+
+    @endif
+
 </div>
 
 
@@ -113,6 +124,9 @@
 
 </div>
 <!-- /#wrapper -->
+
+
+
 
 <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
