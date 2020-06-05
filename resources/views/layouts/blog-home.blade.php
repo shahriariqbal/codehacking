@@ -10,6 +10,6 @@
   
 
 @yield('content')
-        <!-- /.row -->
+     
 
   @include('includes.front_footer')

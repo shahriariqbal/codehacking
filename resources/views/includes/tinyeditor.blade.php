@@ -1,6 +1,3 @@
-{{-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> --}}
-{{-- <script>tinymce.init({selector:'textarea'});</script> --}}
-
 <script src="https://cdn.tiny.cloud/1/hg2zmc7tptemhmcotv5i0ue32p415nw4rh6nfg8xbtbs499p/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 <script>

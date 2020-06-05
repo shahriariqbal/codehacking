@@ -50,7 +50,7 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
         'post_id' => $faker->numberBetween(1, 10),
         'is_active' => 1,
         'author' => $faker->name,
-        'photo' => 'https://source.unsplash.com/random',
+        'photo' => 'placeholder.jpg',
         'email' => $faker->safeEmail,
         'body' => $faker->paragraphs(1, true)
     ];
@@ -62,7 +62,7 @@ $factory->define(App\CommentReply::class, function (Faker\Generator $faker) {
 
         'is_active' => 1,
         'author' => $faker->name,
-        'photo' => 'https://source.unsplash.com/random',
+        'photo' => 'placeholder.jpg',
         'email' => $faker->safeEmail,
         'body' => $faker->paragraphs(1, true)
     ];

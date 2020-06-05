@@ -13,7 +13,7 @@
 
     @include('includes.admin_side_nav')
 
-            <!-- /.navbar-static-side -->
+  
         </nav>
 
 @endif
