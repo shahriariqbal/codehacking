@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">CodeHacking</a>
+            <a class="navbar-brand" href="/">  <i style="font-size: 37px ; color: white ; margin: 60px "> <b>CodeHacking </b> </i>   </a>
         </div>
     
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -17,28 +17,28 @@
                 @if (Auth::guest())
 
                 <li>
-                    <a href="{{url('/login') }}">Login</a>
+                    <a href="{{url('/login') }}">   <b style="font-size: 22px ; color: white ;  ">  Login </b> </a>
                 </li>
                 <li>
-                    <a href="{{url('/register') }}"> Register </a>
+                    <a href="{{url('/register') }}">    <b style="font-size: 22px ; color: white ;  "> Register </b>  </a>
                 </li>
                     
                 @elseif ( Auth::user()->isAdmin() )
 
                 <li>
-                    <a href="/admin">Dashboard</a>
+                    <a href="/admin">   <b style="font-size: 22px ; color: white ;  "> Dashboard </b> </a>
                 </li>
                 <li>
-                    <a href="/logout">Logout</a>
+                    <a href="/logout">  <b style="font-size: 22px ; color: white ;  "> Logout </b> </a>
                 </li>
 
                 @else
 
                 <li>
-                    <a href=" {{ route('admin.posts.create') }} ">Create Posts</a>
+                    <a href=" {{ route('admin.posts.create') }} ">   <b style="font-size: 27px ; color: white ;  ">Create Posts  </b> </a>
                 </li>
                 <li>
-                    <a href="/logout">Logout</a>
+                    <a href="/logout">   <b style="font-size: 22px ; color: white ;  "> Logout </b> </a>
                 </li>
 
                 
